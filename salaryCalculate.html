@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="scripts/jquery-3.2.1.min.js"></script>
+    <script src="scripts/cityDetail.js"></script>
+    <script src="scripts/salary.js"></script>
+</head>
+<body>
+<div class="container bg">
+    <div class="input-group">
+        <div class="input-group-addon">税前:</div>
+        <input type="text" class="form-control" id="input-origin-salary" aria-label="税前">
+    </div>
+    <div class="input-group">
+        <div class="input-group-addon">税后:</div>
+        <input type="text" class="form-control" id="input-result-salary" aria-label="税后">
+    </div>
+    <div class="input-group">
+        <div class="input-group-addon">公积金基数</div>
+        <input type="text" class="form-control" id="fund-base">
+    </div>
+    <div class="input-group">
+        <div class="input-group-addon">社保基数</div>
+        <input type="text" class="form-control" id="social-security-base">
+    </div>
+    <div class="input-group">
+        <div class="input-group-addon" id="spe">城市:</div>
+        <select class="form-control" id="citySelect" aria-label="城市" size="10"></select>
+        <input class="form-control" id="city-input" type="text" oninput="setinput(this)">
+    </div>
+    <div class="btn-group">
+        <input type="button" class="btn btn-default" value="计算" id="execute" aria-label="计算">
+        <input type="button" class="btn btn-default" value="反算" id="executeRev" aria-label="反算">
+        <input type="button" class="btn btn-default" value="重置" id="resetInfo" aria-label="重置">
+    </div>
+    <table class="table detailed-info">
+        <tbody>
+        <tr>
+            <td></td>
+            <td colspan="2">个人应缴：</td>
+            <td colspan="2">单位应缴：</td>
+        </tr>
+        <tr>
+            <td>养老保险金：</td>
+            <td><input type="text" class="form-control input-num" id="personnel-pension" disabled></td>
+            <td><input type="text" class="form-control input-num" id="personnel-pension-tax" disabled></td>
+            <td><input type="text" class="form-control input-num" id="org-pension" disabled></td>
+            <td><input type="text" class="form-control input-num" id="org-pension-tax" disabled></td>
+        </tr>
+        <tr>
+            <td>医疗保险金：</td>
+            <td><input type="text" class="form-control input-num" id="personnel-medical" disabled></td>
+            <td><input type="text" class="form-control input-num" id="personnel-medical-tax" disabled></td>
+            <td><input type="text" class="form-control input-num" id="org-medical" disabled></td>
+            <td><input type="text" class="form-control input-num" id="org-medical-tax" disabled></td>
+        </tr>
+        <tr>
+            <td>失业保险金：</td>
+            <td><input type="text" class="form-control input-num" id="personnel-vision" disabled></td>
+            <td><input type="text" class="form-control input-num" id="personnel-vision-tax" disabled></td>
+            <td><input type="text" class="form-control input-num" id="org-vision" disabled></td>
+            <td><input type="text" class="form-control input-num" id="org-vision-tax" disabled></td>
+        </tr>
+        <tr>
+            <td>住房公积金：</td>
+            <td><input type="text" class="form-control input-num" id="personnel-fund" disabled></td>
+            <td><input type="text" class="form-control input-num" id="personnel-fund-tax" disabled></td>
+            <td><input type="text" class="form-control input-num" id="org-fund" disabled></td>
+            <td><input type="text" class="form-control input-num" id="org-fund-tax" disabled></td>
+        </tr>
+        <tr>
+            <td>工伤保险金：</td>
+            <td><input type="text" class="form-control input-num" id="personnel-injury" disabled></td>
+            <td><input type="text" class="form-control input-num" id="personnel-injury-tax" disabled></td>
+            <td><input type="text" class="form-control input-num" id="org-injury" disabled></td>
+            <td><input type="text" class="form-control input-num" id="org-injury-tax" disabled></td>
+        </tr>
+        <tr>
+            <td>生育保险金：</td>
+            <td><input type="text" class="form-control input-num" id="personnel-fertility" disabled></td>
+            <td><input type="text" class="form-control input-num" id="personnel-fertility-tax" disabled></td>
+            <td><input type="text" class="form-control input-num" id="org-fertility" disabled></td>
+            <td><input type="text" class="form-control input-num" id="org-fertility-tax" disabled></td>
+        </tr>
+        <tr>
+            <td>共计支出：</td>
+            <td colspan="2"><input type="text" class="form-control input-num" id="personnel-sum" disabled></td>
+            <td colspan="2"><input type="text" class="form-control input-num" id="org-sum" disabled></td>
+        </tr>
+        <tr>
+            <td>税：</td>
+            <td colspan="4"><input type="text" class="form-control input-num" id="tax" disabled></td>
+        </tr>
+        <tr>
+            <td>税后月薪：</td>
+            <td colspan="4"><input type="text" class="form-control input-num" id="personnel-result" disabled></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

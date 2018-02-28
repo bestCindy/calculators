@@ -1,0 +1,74 @@
+.container{
+    overflow: hidden;
+}
+.table>tbody>tr>td{
+    padding: 5px 0px;
+}
+.input-group{
+    margin: 8px 5px 0px;
+    width: 165px;
+    float: left;
+    position: relative;
+}
+.input-group:nth-child(5){
+    margin: 6px 5px 8px;
+}
+.btn-group{
+    margin: 6px 5px 8px;
+    width: 165px;
+    float: left;
+}
+.btn-group input{
+    width: 53px;
+    margin-right: 4px;
+}
+.btn-group input:last-child{
+    margin-right: 0px;
+}
+.input-info:first-child input:last-child{
+    width: 80px;
+    margin-top: 10px;
+}
+.input-info:first-child,.input-info:nth-child(2){
+    width: 200px;
+}
+.input-info:nth-child(3),.input-info:nth-child(4){
+    width: 200px;
+}
+.bg{
+    margin-top: 70px;
+    background-color: #86d5fc;
+    width: 380px;
+    border-radius: 10px;
+}
+.input-num{
+    width: 62px;
+    height: 32px;
+    padding: 0px !important;
+    text-align: center;
+}
+.table{
+    margin-bottom: 6px;
+}
+#personnel-sum,#org-sum{
+    width: 128px;
+}
+#tax{
+    width: 260px;
+}
+#personnel-result{
+    width: 260px;
+}
+#citySelect{
+    display: none;
+    position: absolute;
+    width: 107px;
+    top: 34px;
+}
+#city-input{
+    position: absolute;
+    width: 108px;
+}
+#spe{
+    height: 34px;
+}
